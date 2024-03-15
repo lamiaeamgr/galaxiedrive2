@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+    <title>Galaxie Drive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <script src="./assets/css/bootstrap.min.js"></script>
+    <link href="assets/OwlCarroussel/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/OwlCarroussel/animate/animate.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .text-gray-300 {
+            font-size: 14px;
+        }
+
+        /* Reset some default brow my-5 py-5ser styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        img,
+        button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* Apply a basic font family and color */
+        #toggler {
+            margin-left: 300px;
+            margin-top: -50px;
+        }
+
+        /* Style the container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Style the featured product section */
+        .featured-product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .featured-image {
+
+            height: auto;
+        }
+
+
+        .featured-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .featured-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1c53a3;
+            /* Bootstrap's primary color */
+        }
+
+        .featured-description {
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .featured-colors {
+            padding: 10px 0;
+            font-size: 1.2em;
+        }
+
+        /* Add styles for other elements as needed */
+
+        /* Réservez-maintenant button */
+        .add-to-cart-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1c53a3;
+            /* Bootstrap's primary color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .thumbnail {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+        }
+
+
+
+
+        @media (max-width: 767px) {
+            #reservey {
+                width: 60%;
+                height: 50%;
+                background: #1c53a3;
+                color: aliceblue;
+                margin: 10px;
+                font-size: small;
+            }
+
+            #bg-video {
+                height: 10px;
+                width: 50%;
+            }
+
+            #bg-video {
+                min-height: 50vh;
+                /* Adjust as needed for smaller screens */
+            }
+
+            .main-banner .caption {
+                width: 90%;
+            }
+
+            .main-banner .caption h6 {
+                font-size: 1em;
+            }
+
+            .main-banner .caption h3 {
+                font-size: 2em;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+
+            .featured-product {
+                flex-direction: column;
+            }
+
+            .thumbnails {
+                display: flex;
+                flex-direction: row my-5 py-5;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .thumbnail {
+                margin-right: 10px;
+
+            }
+
+            .featured-image {
+                width: 100%;
+            }
+
+            .featured-details {
+                width: 100%;
+            }
+
+            .col-6 {
+                text-align: center;
+            }
+
+            #h2 {
+                font-size: 25px;
+            }
+
+            /* #btnresv {
+
+                width: 200px;
+                height: 60px;
+                margin-left: -65px;
+            } */
+
+            /* copyright */
+            #copyright {
+                text-align: center;
+            }
+
+            .footerh2 {
+                font-size: 25px;
+                padding: 5px;
+            }
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+
+
+        /* Responsive styles for smaller screens (mobile) */
+        @media (max-width: 767px) {
+            .testimonial-item {
+                display: block;
+                width: 100%;
+            }
+        }
+        @media (max-width: 767px) {
+        #divNav {
+          display: block;
+        }
+      }
+  
+      #divNav {
+        display: block;
+      }
+  
+      @media (min-width: 768px) {
+        #divNav {
+          display: none;
+        }
+      }
+    </style>
+  
+  </head>
+  
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
+        <a class="navbar-brand col-auto" href="" style="font-size: 1.7em">
+          <!-- Logo -->
+          <img src="./assets/images/logo.png" alt="" class="px-2 w-50">
+          <!-- Logo -->
+        </a>
+        <button type="button" class="navbar-toggler mr-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Accueil</a>
+                <a href="NosVhicules.html" class="nav-item nav-link">Nos Véhicules</a>
+                <a href="Apropos.html" class="nav-item nav-link active">A Propos</a>
+            </div>
+            <a href="Contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Résérvation &nbsp;<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+      </nav>
+    <main>
+        <div class="container">
+            <div class="row my-5 py-5">
+                <div class="col-md-6 py-5">
+                    <h3>A Propos De Nous</h3>
+                    <br>
+                    <p>Praesent nunc nunc, egestas eget elementum sed; rutrum eget metus! Vestibulum congue congue dui
+                        ut
+                        porta. Aenean laoreet viverra turpis, a commodo purus eleifend a. Nam lacus dui; egestas ut
+                        aliquam
+                        nec, eleifend sit amet est. Nam justo elit, dictum id tempus a, ultricies tempus lacus.</p>
+                    <p>&nbsp;</p>
+                    <p>Nunc purus nibh; eleifend eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci accumsan
+                        tincidunt ut ut elit. Vestibulum nisi orci, rutrum ac auctor non, viverra et magna? Sed vehicula
+                        sem
+                        et arcu tincidunt accumsan. In non pellentesque ipsum. Curabitur facilisis pellentesque
+                        pharetra.
+                    </p>
+                </div>
+                <div class="col-md-6 my-5">
+                    <img src="./assets/images/bg_second.jpeg" alt="" style="width: 100%; height: fit-content;">
+                </div>
+            </div>
+
+        </div>
+        <div class="container-fluid text-white" style="background-color: grey;">
+            <div class="container" style="background-color: grey;">
+                <div class="row  py-5 my-5">
+                    <div class="col-md-5 py-5">
+                        <img src="assets/images/bg_first.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="col-md-7 py-5">
+                        <h3>Notre Parcours En Location De Voiture</h3>
+                        <br>
+                        <p>Pellentesque vitae tortor id neque fermentum pretium. Maecenas ac lacus ut neque
+                            rhoncus laoreet sed id tellus. Donec justo tellus, tincidunt vitae pellentesque
+                            nec,
+                        </p>
+                        <p>&nbsp;</p>
+                        <p>Nam justo elit, dictum id tempus a, ultricies tempus lacus. Nunc purus nibh;
+                            eleifend
+                            eget facilisis ac, sagittis non tortor. Vivamus eu enim a orci accumsan
+                            tincidunt ut
+                            ut elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row my-5 py-5">
+                <div class="col-md-6 py-5">
+                    <h3>Nos Valeurs</h3>
+                    <br>
+                    <img src="assets/images/page2_pic9-10.jpg" alt="" width="100%"><br>
+                    <br>
+                    <img src="assets/icons/check.png" alt="">&nbsp;Chez Galaxie Drive, nous vous assurons des véhicules
+                    impeccables pour une expérience
+                    de conduite fiable et sécurisée. <br>
+                    <img src="assets/icons/check.png" alt="">&nbsp;Votre satisfaction est notre priorité. Nous offrons
+                    un service personnalisé pour
+                    répondre à tous vos besoins de location. <br>
+                    <img src="assets/icons/check.png" alt="">&nbsp;Simplifiez vos déplacements avec notre flotte
+                    moderne. Galaxie Drive rend chaque
+                    trajet agréable et sans tracas. <br>
+                    <img src="assets/icons/check.png" alt="">&nbsp;L'intégrité guide nos actions. Louez avec nous pour
+                    une expérience transparente et de
+                    confiance. <br>
+                </div>
+                <div class="col-md-6 py-5">
+                    <h3>Notre Mission</h3>
+                    <br>
+                    <img src="assets/images/page5_pic5.jpg" alt="" height="213px" width="100%"><br>
+                    <br>
+                    <p>Notre mission est de vous offrir une expérience de location de voiture exceptionnelle,
+                        où la qualité, la fiabilité et la satisfaction du client sont nos priorités absolues.
+                        Nous nous engageons à fournir des véhicules de haute qualité, entretenus avec le plus grand soin
+                        pour assurer votre sécurité
+                        et votre confort tout au long de votre trajet. En tant qu'agence de location de voiture de
+                        confiance, nous visons à simplifier
+                        votre voyage en mettant à votre disposition une flotte diversifiée de véhicules modernes et bien
+                        entretenus. Faites confiance à
+                        Galaxie Drive pour faire de chaque trajet une expérience mémorable</p>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="mb-5">Nos Clients Disent :</h1>
+                </div>
+                <div class="owl-carousel testimonial-carousel position-relative">
+                    <!-- Testimonial Item 1 -->
+                    <div class="testimonial-item text-center">
+                        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/images/testimonial-1.jpg"
+                            style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">Karima Alami</h5>
+                        <br>
+                        <div class="testimonial-text bg-light text-center p-4">
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam
+                                et
+                                eos. Clita erat ipsum et lorem et sit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Item 2 -->
+                    <div class="testimonial-item text-center">
+                        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/images/testimonial-2.jpg"
+                            style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">Ahmed Sebai</h5>
+                        <br>
+                        <div class="testimonial-text bg-light text-center p-4">
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam
+                                et
+                                eos. Clita erat ipsum et lorem et sit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Item 3 -->
+                    <div class="testimonial-item text-center">
+                        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/images/testimonial-3.jpg"
+                            style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">Hamza Belhaj</h5>
+                        <br>
+                        <div class="testimonial-text bg-light text-center p-4">
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam
+                                et
+                                eos. Clita erat ipsum et lorem et sit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Item 4 -->
+                    <div class="testimonial-item text-center">
+                        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/images/testimonial-4.jpg"
+                            style="width: 80px; height: 80px;">
+                        <h5 class="mb-0">Laila El Kassimi</h5>
+                        <br>
+                        <div class="testimonial-text bg-light text-center p-4">
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam
+                                et
+                                eos. Clita erat ipsum et lorem et sit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+    </main>
+    <!-- Footer -->
+    <div class="conntainer-fluid bg-light py-3">
+        <center>
+            <div class="col-md-6 bg-white py-3 " style="border-radius: 15px; height: 150px;">
+                <h2 class="footerh2 my-2">CONSULTEZ NOS RESEAUX SOCIAUX</h2>
+                <div class="row justify-content-around w-50 mt-2 p-0">
+                    <a class="btn-slide" href="https://www.facebook.com/profile.php?id=61551219020904&mibextid=ZbWKwL"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-slide" href="https://wa.me/message/SBCAUWPBBWIBP1"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn-slide" href="https://www.instagram.com/galaxiedrive?igshid=OGQ5ZDc2ODk2ZA=="
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+    <footer class=" bg-cover  bg-light text-dark ">
+        <div class="py-12 ">
+            <div class="container bg-light">
+                <div class="row">
+
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Notre service
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html">Contactez-Nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html">Réservez-maintenant</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Shop
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="NosVhicules.html">Nos véhicules</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="">Nos lieux</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Galaxie Drive
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="./Apropos.html">A propos de nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Apropos.html">Notre carrière</a>
+                            </li>
+                            <li class="pt-3">
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Contact
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300 py-3" href="#!">+212 6 63 30 04 16</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="#!">Contact@galaxiedrive.com</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-12">
+            <div class="container bg-light">
+                <div class="row pt-5">
+                    <div class="col py-3">
+
+                        <!-- Copyright -->
+                        <p class="mb-3 mb-md-0 fs-xxs text-muted " id="copyright">
+                            © 2024 All rights reserved. <span class="font-italic font-weight-bold">GALAXIE DRIVE</span>
+                        </p>
+
+                    </div>
+                    <div class="col-auto py-3">
+
+                        <!-- Payment methods -->
+                        <img class="footer-payment" src="assets/payments/payement11.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement2.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement3.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement4.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement5.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement6.PNG" alt="...">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/OwlCarroussel/wow/wow.min.js"></script>
+    <script src="assets/OwlCarroussel/easing/easing.min.js"></script>
+    <script src="assets/OwlCarroussel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hide the spinner when the page is fully loaded
+            $('#spinner').hide();
+        });
+    </script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-U1OMZmZqQhqLMpG8r+El98bL4C7pG1a1z6I1l6SILeEoNY5rG6Z1ZbDYzsy7kdW2"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

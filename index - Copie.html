@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/images/logo.png">
+  <title>Galaxie Drive</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    .card-index {
+      perspective: 1000px;
+      height: 50vh;
+    }
+
+    .card-content {
+      position: absolute;
+      width: 94%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform 0.5s;
+    }
+
+    .front {
+      z-index: 2;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .card-index.flip .front {
+      transform: rotateY(180deg);
+    }
+
+    .card-index.flip .back {
+      transform: rotateY(0deg);
+    }
+
+
+    .height-100 {
+      height: 70%;
+    }
+
+    .card {
+      width: 380px;
+      border: none;
+      height: 280px;
+    }
+
+    .ratings {
+      margin-right: 10px;
+    }
+
+    .ratings i {
+
+      color: #cecece;
+      font-size: 32px;
+    }
+
+    .rating-color {
+      color: #fbc634 !important;
+    }
+
+    .review-count {
+      font-weight: 400;
+      margin-bottom: 2px;
+      font-size: 24px !important;
+    }
+
+    .small-ratings i {
+      color: #cecece;
+    }
+
+    .review-stat {
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+          <div class="card-content front">
+            <h3 class="card-title">Dacia Logan</h3>
+            <p>Ou voiture similaire ...</p>
+            <div class="card-inside justify-content-center align-items-center">
+              <img src="./assets/images/DACIA_LOGAN_2-removebg-preview.png" alt="" style="height: 200px; width: auto;"
+                class="card-img">
+            </div>
+            <ul class="car-features">
+              <table width="100%">
+                <tr width="100%">
+                  <td width="33%">
+                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Gasoil</li>
+                  </td>
+                  <td width="33%">
+                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg" alt=""> Automatique
+                    </li>
+                  </td>
+                  <td width="33%">
+                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5 Personnes</li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagage</li>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+              </table>
+            </ul>
+            <h6 style="font-weight: bold;">A partir de 249 DH <span
+                style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299 DH</span>
+            </h6>
+            <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Reviews</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Cleanliness</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Approachability of SLT</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Front Office</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">CPD</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Pastrol</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Office Space</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Front</b></button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+          <div class="card-content front">
+            <h3 class="card-title">Dacia Logan</h3>
+            <p>Ou voiture similaire ...</p>
+            <div class="card-inside justify-content-center align-items-center">
+              <img src="./assets/images/DACIA_LOGAN_2-removebg-preview.png" alt="" style="height: 200px; width: auto;"
+                class="card-img">
+            </div>
+            <ul class="car-features">
+              <table width="100%">
+                <tr width="100%">
+                  <td width="33%">
+                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Gasoil</li>
+                  </td>
+                  <td width="33%">
+                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg" alt=""> Automatique
+                    </li>
+                  </td>
+                  <td width="33%">
+                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5 Personnes</li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagage</li>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+              </table>
+            </ul>
+            <h6 style="font-weight: bold;">A partir de 249 DH <span
+                style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299 DH</span>
+            </h6>
+            <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Reviews</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Cleanliness</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Approachability of SLT</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Front Office</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">CPD</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Pastrol</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Office Space</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Front</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="slide.js"></script>
+  <script src="script.js"></script>
+  <script src="scriptLieux.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Hide the spinner when the page is fully loaded
+      $('#spinner').hide();
+    });
+
+    function handleHover(element) {
+      element.classList.add('hovered');
+    }
+
+    function handleHoverEnd(element) {
+      element.classList.remove('hovered');
+    }
+
+    function flipCard(button) {
+      const card = button.closest('.card-index');
+      card.classList.toggle('flip');
+    }
+
+  </script>
+</body>
+
+</html>

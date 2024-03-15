@@ -1,0 +1,387 @@
+html::-webkit-scrollbar {
+    width: .5rem;
+    height: 0.01rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: darkblue;
+    border-radius: 5rem;
+}
+
+.parent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin-left: -2px;
+}
+
+/* Optional: Adjust styles for navigation buttons and pagination */
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev {
+    color: #0011ff;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#TheBG {
+    padding-top: 20px;
+    /* Adjust as needed */
+    padding-bottom: 20px;
+    /* Adjust as needed */
+    background-color: rgba(24, 31, 22, 0.58);
+    background-image: url(./assets/images/body.avif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+#slideshow-container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slide-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.425);
+    margin-top: 0;
+    padding-top: 27%;
+    font-size: 3em;
+}
+
+
+.text-gray-300{
+    font-size: 14px;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 700px;
+    /* Set the desired height */
+    object-fit: cover;
+    /* Adjust as needed: cover, contain, fill, etc. */
+}
+
+#prev,
+#next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+#next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#prev:hover,
+#next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* biggest slide */
+.tout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.col1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+    padding-right: 10px;
+    background-color: #f7f7f7;
+    height: 600px;
+    padding: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* margin-top: 20px; */
+}
+
+.col1.hide {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.col1.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hr {
+    margin-right: 300px;
+    align-items: start;
+    width: 50%;
+    background: darkblue;
+}
+
+.col2 {
+    flex: 1;
+    overflow: hidden;
+}
+
+.imgg {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+    margin-right: 400px;
+    margin-top: 80px;
+}
+
+.navigation-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.btn-slide {
+    width: 40px;
+    height: 40px;
+    border: 2px solid darkblue;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: rgb(3, 3, 73);
+}
+
+.button-all {
+    background-color: darkblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    margin: auto;
+}
+
+.button-louer:hover {
+    background-color: #417394;
+}
+
+.n {
+    font-size: 60px;
+    /* transition: opacity 0.5s ease; */
+}
+
+#ico {
+    margin-bottom: 12px;
+}
+
+.animate__animated {
+    animation-duration: 1s;
+
+}
+
+.animate__fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.prix {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.price-container .h3 {
+    font-size: 5vh;
+
+
+}
+
+
+
+.price-container {
+    margin-left: 150px;
+    transition: opacity 0.5s ease;
+    line-height: 10px;
+
+}
+
+.price-container.hidden {
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .tout {
+        width: 100%;
+        flex-direction: column-reverse;
+        /* margin: auto; */
+    }
+
+    .col2 {
+        margin-right: 10px;
+    }
+
+    .col1 {
+        flex: 1;
+        padding: 30px;
+        height: auto;
+        text-align: center;
+        width: 100%;
+
+    }
+
+    .col1.show {
+        transform: translateX(0);
+    }
+
+    .parg {
+        margin-right: 10px;
+        font-size: 14px;
+        margin-bottom: 10px;
+        /* Add margin to create space between paragraphs */
+        /* margin: auto; */
+    }
+
+    .n {
+        font-size: 24px;
+        margin-bottom: -5px;
+        /* Add margin to create space below title */
+        text-align: center;
+        margin-bottom: 7px;
+    }
+
+    #span {
+        margin-left: 13px;
+    }
+
+    #ico {
+        margin-bottom: 12px;
+    }
+
+    #leftColumn {
+        margin-top: -35px;
+
+    }
+
+    .price-container .h3 {
+        font-size: 4vh;
+        margin-left: -120px;
+        margin-top: 10px;
+
+    }
+
+    .button-louer {
+        width: 80px;
+        height: 40px;
+        font-size: 17px;
+    }
+
+    #carImage {
+        width: 440px;
+        max-width: 410px;
+        /* Set a maximum width for the image */
+        margin-top: 15px;
+        /* Add margin above the image */
+        margin-left: 90px;
+    }
+
+    .navigation-icons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .btn {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        margin-right: 40px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        margin-left: 10px;
+    }
+
+
+    .imgg {
+        margin-right: 70px;
+        width: 35px;
+    }
+
+   
+
+}
+
+

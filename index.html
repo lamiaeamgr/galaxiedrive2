@@ -1,0 +1,975 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/images/logo.png">
+  <title>Galaxie Drive</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+  <script src="./assets/css/bootstrap.min.js"></script>
+  <script src="./assets/css/jquery-3.6.0.js"></script>
+  <script defer src="app.js"></script>
+
+  <link rel="stylesheet" href="slide.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    @media (max-width: 767px) {
+      #TheBG {
+        /* text-align: center; */
+      }
+
+      #cart .col-md-4 {
+        margin-bottom: 20px;
+      }
+
+      .custom-offset .col-md-5 {
+        text-align: left;
+        /* Adjust text alignment to the left */
+      }
+
+      .custom-offset .col-md-7 {
+        text-align: left;
+        /* Adjust text alignment to the right */
+
+      }
+
+    }
+
+    @media (max-width: 767px) {
+      #divNav {
+        display: block;
+      }
+    }
+
+    #divNav {
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      #divNav {
+        display: none;
+      }
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
+    <a class="navbar-brand col-auto" href="" style="font-size: 1.7em">
+      <!-- Logo -->
+      <img src="./assets/images/logo.png" alt="" class="px-2 w-50">
+      <!-- Logo -->
+    </a>
+    <button type="button" class="navbar-toggler mr-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto p-4 p-lg-0">
+        <a href="index.html" class="nav-item nav-link active">Accueil</a>
+        <a href="NosVhicules.html" class="nav-item nav-link">Nos Véhicules</a>
+        <a href="Apropos.html" class="nav-item nav-link">A Propos</a>
+      </div>
+      <a href="Contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"
+        style="border-radius: 0%;">Résérvation &nbsp;<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
+  <div class="main-banner" id="top" height="800px">
+    <video autoplay="" muted="" loop="" id="bg-video" height="800px">
+      <source src="assets/images/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay header-text py-3 justify-content-center">
+      <div class="caption">
+        <h3> Find the best deal and take the road with <em>Galaxie Drive.</em></h3>
+        <div class="justify-content-around">
+          <a href="Contact.html#send" class="btn text-white p-3"
+            style="font-size: 1.2em; background: darkblue; width: fit-content; margin: 0; height: fit-content; ">Book
+            now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="divNav" style="height:10vh; width:100%; "></div>
+
+  <!-- <div class="content-wrapper mt-5">
+    <div class="tout">
+      <div class="col1 p-5 show" id="leftColumn">
+        <h1 class="n">DACIA LOGAN</h1>
+        <p class="parg">Description for DACIA LOGAN</p>
+        <hr class="hr">
+        <div class="row mt-3" style="width: 60%;">
+          <div class="item col-md-6">
+            <img id="ico" src="assets/images/speedometer (1).png" alt="">
+            <span id="span">290 km/h</span>
+          </div>
+          <div class="item col-md-6">
+            <img id="ico" src="assets/images/turbo-engine.png" alt="">
+            <span id="span">Illimité</span>
+          </div>
+        </div>
+        <div class="row" style="width: 60%;">
+          <div class="item col-md-6">
+            <img id="ico" src="assets/images/racing.png" alt="">
+            <span id="span">Automatique</span>
+          </div>
+          <div class="item col-md-6">
+            <img id="ico" src="assets/images/gasoline-pump.png" alt="">
+            <span id="span">ON</span>
+          </div>
+        </div>
+        <br>
+        <div class="prix">
+          <a href="NosVhicules.html">
+            <button onclick="" class="button-all ">Voir Plus</button></a>
+          <div class="price-container">
+            <h3 class="h3">249DH </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col2 moveToRight w-100 mx-0">
+        <img class="imgg py-4 loaded mx-0" src="assets/images/1-removebg-preview.png" id="carImage" style="opacity: 1;">
+        <div class="navigation-icons mx-0">
+          <button onclick="changeContent()" class="btn-slide">&lt;</button>
+          <button onclick="changeContent()" class="btn-slide">&gt;</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="b-example-divider hidden"></div>
+  <div class="container px-4 py-5 hidden" id="featured-3">
+    <h2 class="pb-2 border-bottom">Notre Aventure Automobile</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col hidden">
+        <div
+          class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="./assets/icons/car1.png" alt="" width="60px">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Service exceptionnel</h3>
+        <p>Une équipe dévouée pour un service client exceptionnel. Nous dépassons vos attentes à chaque étape de votre
+          voyage.</p>
+
+      </div>
+      <div class="feature col hidden">
+        <div
+          class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="./assets/icons/car-keys.png" alt="" width="60px">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Expedition &amp; retrait faciles</h3>
+        <p>Retirez et retournez votre voiture sans tracas. Notre processus simplifié rend la location de voiture rapide
+          et pratique.</p>
+
+      </div>
+      <div class="feature col hidden">
+        <div
+          class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+          <img src="./assets/icons/best-price.png" alt="" width="60px">
+        </div>
+        <h3 class="fs-2 text-body-emphasis">Tarifs adorables</h3>
+        <p>Des tarifs compétitifs pour tous les budgets. Profitez de nos offres spéciales et économisez sur chaque
+          réservation.</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="b-example-divider hidden"></div>
+
+  <!-- section 2 start -->
+  <!-- <div class="container-fluid sec2 p-5 bg-light" style="margin-top: 0;">
+    <div class="container-fluid p-5">
+      <div class=" row justify-content-center ">
+        <div class="col-md-4 hidden ">
+          <center><img src="./assets/icons/car1.png" alt="" width="60px"></center>
+          <h4 style="height: 10vh;">
+            DÉCOUVREZ UNE NOUVELLE AVENTURE AUTOMOBILE</h4><br>
+          <p class="pSec2">Optez pour une diversité de véhicules chez Galaxie Drive.</p>
+        </div>
+        <div class="col-md-4 hidden  ">
+          <center><img src="./assets/icons/car-keys.png" alt="" width="60px"></center>
+          <h4 style="height: 10vh;">EXPÉDITION &amp; RETRAIT FACILES</h4><br>
+          <p class="pSec2">Bénéficiez d'un service d'expédition et de retrait de qualité.</p>
+
+
+        </div>
+        <div class="col-md-4 hidden ">
+          <center><img src="./assets/icons/best-price.png" alt="" width="60px"></center>
+          <h4 style="height: 10vh;">TARIFS ABORDABLES ET SERVICE EXCEPTIONNEL</h4><br>
+          <p class="pSec2">Notre engagement : satisfaction client, tarifs compétitifs, service exceptionnel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- section 3 start -->
+  <div class="container-fluid pt-5 hidden">
+    <div class="row">
+      <div class="col-md-4 hidden">
+        <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+          <div class="card-content front">
+            <h3 class="card-title">Dacia Logan</h3>
+            <p>Ou voiture similaire ...</p>
+            <div class="card-inside justify-content-center align-items-center">
+              <img src="./assets/images/DACIA_LOGAN_2-removebg-preview.png" alt="" style="height: 200px; width: auto;"
+                class="card-img">
+            </div>
+            <ul class="car-features">
+              <table width="100%">
+                <tr width="100%">
+                  <td width="33%">
+                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Gasoil</li>
+                  </td>
+                  <td width="33%">
+                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg" alt=""> Automatique
+                    </li>
+                  </td>
+                  <td width="33%">
+                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5 Personnes</li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagage</li>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+              </table>
+            </ul>
+            <h6 style="font-weight: bold;">A partir de 249 DH <span
+                style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299 DH</span>
+            </h6>
+            <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 hidden">
+        <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+          <div class="card-content front">
+            <h3 class="card-title">Hyundai Tucson</h3>
+            <p>Ou voiture similaire ...</p><br>
+            <div class="card-inside justify-content-center align-items-center">
+              <img src="./assets/images/HYUNDAI_TUCSON_2-removebg-preview.png" alt=""
+                style="height: 200px; width: auto;" class="card-img">
+            </div>
+            <ul class="car-features">
+              <table width="100%">
+                <tr width="100%">
+                  <td width="33%">
+                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                  </td>
+                  <td width="33%">
+                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg" alt=""> Automatique
+                    </li>
+                  </td>
+                  <td width="33%">
+                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                      Personnes</li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 3+2 Bagages
+                    </li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                      A/C</li>
+                  </td>
+                </tr>
+              </table>
+            </ul>
+
+
+            <h6 style="font-weight: bold;">A partir de 449 DH <span
+                style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">499
+                DH</span>
+            </h6>
+            <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 hidden">
+        <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+          <div class="card-content front">
+            <h3 class="card-title">Volkswagen Touareg Rline</h3>
+            <p>Ou voiture similaire ...</p><br>
+            <div class="card-inside justify-content-center align-items-center">
+              <img src="./assets/images/Volkswagen_Touareg_Rline_2-removebg-preview.png" alt=""
+                style="height: 200px; width: auto;" class="card-img">
+            </div>
+            <ul class="car-features">
+              <table width="100%">
+                <tr width="100%">
+                  <td width="33%">
+                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                  </td>
+                  <td width="33%">
+                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg" alt=""> Automatique
+                    </li>
+                  </td>
+                  <td width="33%">
+                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                      Personnes</li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                    </li>
+                  </td>
+                  <td>
+                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                      A/C</li>
+                  </td>
+                </tr>
+              </table>
+            </ul>
+
+            <h6 style="font-weight: bold;">A partir de 849 DH <span
+                style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">899
+                DH</span>
+            </h6>
+            <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <center><a href="NosVhicules.html">
+      <button class="btn my-5 " style="background: darkblue; color: aliceblue;" id="voir-cart">Voir Plus</button></a>
+  </center>
+  <!-- section 3 end -->
+  <!-- section 2 start -->
+  <div class="bg-cover container-fluid p-0" style="text-align: center;" id="TheBG">
+    <div style="min-height: 80vh; width: 100%; background-color: #0000007e;" class="text-white">
+      <center class="m-5">
+        <h1 class="pt-5">Pourquoi nous choisir</h1>
+
+        <div class="row text-center justify-content-center w-100">
+          <div class="col-md-4 hidden col-xs-12">
+            <img src="assets/images/page2_icon2.png" alt="" style="width: 60px; height: 60px;" class="mt-5">
+            <h3 class="my-5">SERVICE DE LIVRAISON</h3>
+            <h5 class="my-5">Nous vous livrons votre voiture jusqu'a votre maison ou à l'aeroport</h5>
+          </div>
+
+          <div class="col-md-4 hidden col-xs-12">
+            <img src="assets/images/page2_icon1.png" alt="" style="width: 60px; height: 60px;" class="mt-5">
+            <h3 class="my-5">DES VOITURES PERFORMANTES </h3>
+            <h5 class="my-5">Véhicules sélectionnés pour leurs performances et équipements de pointe.</h5>
+          </div>
+
+          <div class="col-md-4 hidden col-xs-12">
+            <img src="assets/images/page1_icon1.png" alt="" style="width: 60px; height: 60px;" class="mt-5">
+            <h3 class="my-5">UN SUPPOERT 24h/7j</h3>
+            <h5 class="my-5">Vous avez besoin de nous on est a l'ecoute 24/7</h5>
+          </div>
+        </div>
+      </center>
+      
+    </div>
+  </div>
+  <!-- section 2 end -->
+  <!-- section 4 start-->
+  <div class="container-fluid bg-light py-5 hidden">
+    <center>
+      <h1>Nos Lieux</h1>
+    </center>
+    <div id="slideshow-container" style="margin-top: 100px; margin-bottom: 100px;">
+
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/Casablance.jpg" style="width:100%">
+        <h1 class="slide-title">Aéroport de Casablanca</h1>
+      </div>
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/marrakesh.jpg" style="width:100%">
+        <h1 class="slide-title">Aéroport de Marrakech</h1>
+      </div>
+
+      <div class="mySlides" style="display: block;">
+        <img src="assets/images/Tanger.jpg" style="width:100%">
+        <h1 class="slide-title">Aéroport de Tanger</h1>
+      </div>
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/rabat.avif" style="width:100%">
+        <h1 class="slide-title">Aéroport de Rabat</h1>
+      </div>
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/agadir.jpg" style="width:100%">
+        <h1 class="slide-title">Aéroport d'Agadir</h1>
+      </div>
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/fes.avif" style="width:100%">
+        <h1 class="slide-title">Aéroport de Fès</h1>
+      </div>
+
+      <div class="mySlides" style="display: none;">
+        <img src="assets/images/drapeau.jpg" style="width:100%; background-size: cover;">
+        <h1 class="slide-title">Et Toutes Les Gares Du Maroc</h1>
+      </div>
+
+      <a id="prev" onclick="plusSlides(-1)">❮</a>
+      <a id="next" onclick="plusSlides(1)">❯</a>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="conntainer-fluid bg-light py-3 hidden">
+    <center>
+      <div class="col-md-6 bg-white py-3 " style="border-radius: 15px; height: 150px;">
+        <h2 class="mb-3" id="h2">CONSULTEZ NOS RESEAUX SOCIAUX</h2>
+        <div class="row justify-content-around w-50 mt-2">
+          <a class="btn-slide" href="https://www.facebook.com/profile.php?id=61551219020904&amp;mibextid=ZbWKwL"
+            style="text-decoration: none; color: darkblue"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn-slide" href="https://wa.me/message/SBCAUWPBBWIBP1"
+            style="text-decoration: none; color: darkblue"><i class="fab fa-whatsapp"></i></a>
+          <a class="btn-slide" href="https://www.instagram.com/galaxiedrive?igshid=OGQ5ZDc2ODk2ZA=="
+            style="text-decoration: none; color: darkblue"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </center>
+  </div>
+  <footer class=" bg-cover  bg-light text-dark text-centre ">
+    <div class="py-12 ">
+      <div class="container bg-light">
+        <div class="row">
+
+          <div class="col-6 col-sm">
+
+            <!-- Heading -->
+            <h6 class="m-4">
+              Notre service
+            </h6>
+
+            <!-- Links -->
+            <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+              <li class="pt-3">
+                <a class="text-gray-300" href="Contact.html#send">Contactez-Nous</a>
+              </li>
+              <li class="pt-3">
+                <a class="text-gray-300" href="Contact.html#send">Réservez-maintenant</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-sm">
+
+            <!-- Heading -->
+            <h6 class="m-4">
+              Shop
+            </h6>
+
+            <!-- Links -->
+            <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+              <li class="pt-3">
+                <a class="text-gray-300" href="NosVhicules.html">Nos véhicules</a>
+              </li>
+              <li class="pt-3">
+                <a class="text-gray-300" href="">Nos lieux</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-sm">
+
+            <!-- Heading -->
+            <h6 class=" m-4 ">
+              Galaxie Drive
+            </h6>
+
+            <!-- Links -->
+            <ul class="list-unstyled mb-0 py-3">
+              <li class="pt-3">
+                <a class="text-gray-300" href="./Apropos.html">A propos de nous</a>
+              </li>
+              <li class="pt-3">
+                <a class="text-gray-300" href="Apropos.html">Notre carrière</a>
+              </li>
+              <li class="pt-3">
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-6 col-sm">
+
+            <!-- Heading -->
+            <h6 class=" m-4 ">
+              Contact
+            </h6>
+
+            <!-- Links -->
+            <ul class="list-unstyled mb-0 py-3">
+              <li class="pt-3">
+                <a class="text-gray-300 py-3" href="#!">+212 6 63 30 04 16</a>
+              </li>
+              <li class="pt-3">
+                <a class="text-gray-300" href="#!">Contact@galaxiedrive.com</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pt-12">
+      <div class="container bg-light">
+        <div class="row pt-5">
+          <div class="col py-3">
+
+            <!-- Copyright -->
+            <p class="mb-3 mb-md-0 fs-xxs text-muted " style="text-align: center;">
+              © 2024 All rights reserved. <span class="font-italic font-weight-bold">GALAXIE
+                DRIVE</span>
+            </p>
+
+          </div>
+          <div class="col-auto py-3">
+
+            <!-- Payment methods -->
+            <img class="footer-payment" src="assets/payments/payement11.PNG" alt="...">
+            <img class="footer-payment" src="assets/payments/payement2.PNG" alt="...">
+            <img class="footer-payment" src="assets/payments/payement3.PNG" alt="...">
+            <img class="footer-payment" src="assets/payments/payement4.PNG" alt="...">
+            <img class="footer-payment" src="assets/payments/payement5.PNG" alt="...">
+            <img class="footer-payment" src="assets/payments/payement6.PNG" alt="...">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="slide.js"></script>
+  <script src="script.js"></script>
+  <script src="scriptLieux.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Hide the spinner when the page is fully loaded
+      $('#spinner').hide();
+    });
+
+    function handleHover(element) {
+      element.classList.add('hovered');
+    }
+
+    function handleHoverEnd(element) {
+      element.classList.remove('hovered');
+    }
+
+    function flipCard(button) {
+      const card = button.closest('.card-index');
+      card.classList.toggle('flip');
+    }
+  </script>
+  <!-- Bootstrap CSS
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-U1OMZmZqQhqLMpG8r+El98bL4C7pG1a1z6I1l6SILeEoNY5rG6Z1ZbDYzsy7kdW2"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

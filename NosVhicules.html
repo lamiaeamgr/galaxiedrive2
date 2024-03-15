@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+    <title>Galaxie Drive</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <script src="./assets/css/bootstrap.min.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .text-gray-300 {
+            font-size: 14px;
+        }
+
+        /* Reset some default browser styles */
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        img,
+        button {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* Apply a basic font family and color */
+        #toggler {
+            margin-left: 300px;
+            margin-top: -50px;
+        }
+
+        /* Style the container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Style the featured product section */
+        .featured-product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .featured-image {
+
+            height: auto;
+        }
+
+
+        .featured-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .featured-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+            /* Bootstrap's primary color */
+        }
+
+        .featured-description {
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        .featured-colors {
+            font-size: 16px;
+            text-decoration: line-through;
+            color: rgb(190, 57, 57);
+        }
+
+        /* Add styles for other elements as needed */
+
+        /* <a href="Contact.html#send">Réservez maintenant</a> button */
+        .add-to-cart-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1c53a3;
+            /* Bootstrap's primary color */
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .thumbnail {
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+        }
+
+
+
+
+        @media (max-width: 767px) {
+            #reservey {
+                width: 60%;
+                height: 50%;
+                background: #1c53a3;
+                color: aliceblue;
+                margin: 10px;
+                font-size: small;
+            }
+
+            #bg-video {
+                height: 10px;
+                width: 50%;
+            }
+
+            #bg-video {
+                min-height: 50vh;
+                /* Adjust as needed for smaller screens */
+            }
+
+            .main-banner .caption {
+                width: 90%;
+            }
+
+            .main-banner .caption h6 {
+                font-size: 1em;
+            }
+
+            .main-banner .caption h3 {
+                font-size: 2em;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+
+            .featured-product {
+                flex-direction: column;
+            }
+
+            .thumbnails {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .thumbnail {
+                margin-right: 10px;
+
+            }
+
+            .featured-image {
+                width: 100%;
+            }
+
+            .featured-details {
+                width: 100%;
+            }
+
+            .col-6 {
+                text-align: center;
+            }
+
+            #h2 {
+                font-size: 25px;
+            }
+
+            /* #btnresv {
+
+                width: 200px;
+                height: 60px;
+                margin-left: -65px;
+            } */
+
+            /* copyright */
+            #copyright {
+                text-align: center;
+            }
+
+            .footerh2 {
+                font-size: 25px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
+        <a class="navbar-brand col-auto" href="" style="font-size: 1.7em">
+          <!-- Logo -->
+          <img src="./assets/images/logo.png" alt="" class="px-2 w-50">
+          <!-- Logo -->
+        </a>
+        <button type="button" class="navbar-toggler mr-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Accueil</a>
+                <a href="NosVhicules.html" class="nav-item nav-link active">Nos Véhicules</a>
+                <a href="Apropos.html" class="nav-item nav-link">A Propos</a>
+            </div>
+            <a href="Contact.html" style="border-radius: 0%;" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Résérvation &nbsp;<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+      </nav>
+    <div class="main-banner" id="top" height="800px">
+        <video autoplay="" muted="" loop="" id="bg-video" height="800px">
+          <source src="assets/images/video.mp4" type="video/mp4">
+        </video>
+    
+        <div class="video-overlay header-text py-3 justify-content-center">
+          <div class="caption">
+            <h3> Find the best deal and take the road with <em>Galaxie Drive.</em></h3>
+            <div class="justify-content-around">
+              <a href="Contact.html#send" class="btn text-white p-3"
+                style="font-size: 1.2em; background: darkblue; width: fit-content; margin: 0; height: fit-content; ">Book
+                now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- section 1 start -->
+    <div class="container-fluid my-5 mx-0">
+        <div class="row" id="cart">
+            <!-- element 1  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Dacia Logan</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/DACIA_LOGAN_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Gasoil</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagage
+                                    </li>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+
+                    <h6 style="font-weight: bold;">A partir de 249 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 2  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Hyundai Tucson</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/HYUNDAI_TUCSON_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 3+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+
+                    <h6 style="font-weight: bold;">A partir de 449 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">499
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 3  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Volkswagen Touareg</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/Volkswagen_Touareg_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 749 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">799
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 4  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Volkswagen Touareg Rline</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/Volkswagen_Touareg_Rline_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 849 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">899
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 5  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Citroen C4</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/Citroen_C4_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 2+1 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 249 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 6  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Renault Clio 5</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/clio5.webp" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 249 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 7  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Hyundai Accent</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/HYNDAI_ACCENT_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 299 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">349
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 8  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Hyundai Tucson</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/HYUNDAI_TUCSON_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 249 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 9  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Dacia Duster</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/DACIA_DUSTER_2-removebg-preview.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 349 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">399
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+            <!-- element 10  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Volkswagen T-Roc</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/troc.png" alt=""
+                            style="height: 200px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 449 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">499
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+
+            <!-- element 11  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Volkswagen Golf 8</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/golf8-removebg-preview.png" alt=""
+                            style="height: 170px; width: auto;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 5+2 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 699 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">749
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+
+            <!-- element 12  -->
+            <div class="col-md-4 mt-3 hidden" >
+                <div class="card-index" onmouseover="handleHover(this)" onmouseout="handleHoverEnd(this)">
+                    <div class="card-content front">
+                    <h3 class="card-title">Peugeot 208</h3>
+                    <p>Ou voiture similaire ...</p><br>
+                    <div class="card-inside justify-content-center align-items-center">
+                        <img src="./assets/images/Peugeot_208-removebg-preview.png" alt=""
+                            style="height: 150px; width: auto; margin-top: -20px;" class="card-img">
+                    </div>
+                    <ul class="car-features">
+                        <table width="100%">
+                            <tr width="100%">
+                                <td width="33%">
+                                    <li class="fuel"><img src="./assets/icons/fuel-svgrepo-com.svg" alt=""> Diesel</li>
+                                </td>
+                                <td width="33%">
+                                    <li class="transmission"><img src="./assets/icons/transmission-svgrepo-com.svg"
+                                            alt=""> Automatique
+                                    </li>
+                                </td>
+                                <td width="33%">
+                                    <li class="doors"><img src="./assets/icons/ico_doors.svg" alt=""> 5 portes</li>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <li class="people"><img src="./assets/icons/people-svgrepo-com.svg" alt=""> 5
+                                        Personnes</li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/bags-svgrepo-com.svg" alt=""> 1 Bagages
+                                    </li>
+                                </td>
+                                <td>
+                                    <li class="bags"><img src="./assets/icons/snow-crystal-1-svgrepo-com.svg" alt="">
+                                        A/C</li>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <h6 style="font-weight: bold;">A partir de 249 DH <span
+                            style="text-decoration: line-through; color: red; font-weight: normal; font-size: 0.8em;">299
+                            DH</span>
+                    </h6>
+                    <button type="button" class="btn-card"><b><a href="Contact.html#contact">Réserver
+                  maintenant</a></b></button>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Détails</b></button>
+          </div>
+          <div class="card-content back">
+            <div class="height-100 container d-flex justify-content-center align-items-center">
+
+              <div class=" p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <h5 class="review-count">12 Avis</h5>
+                </div>
+
+
+                <div class="mt-5 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Confort</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Fiabilité</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Technologie</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Consommation</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                  </div>
+                </div>
+
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Performances</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+
+                <div class="mt-1 d-flex justify-content-between align-items-center">
+                  <h5 class="review-stat">Propreté</h5>
+                  <div class="small-ratings">
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star rating-color"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <button type="button" class="btn-card2" onclick="flipCard(this)"><b>Retour</b></button>
+          </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="conntainer-fluid bg-light py-3">
+        <center>
+            <div class="col-md-6 bg-white py-3 " style="border-radius: 15px; height: 150px;">
+                <h2 id="h2">CONSULTEZ NOS RESEAUX SOCIAUX</h2>
+                <div class="row justify-content-around w-50 mt-2">
+                    <a class="btn-slide" href="https://www.facebook.com/profile.php?id=61551219020904&mibextid=ZbWKwL"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-slide" href="https://wa.me/message/SBCAUWPBBWIBP1"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn-slide" href="https://www.instagram.com/galaxiedrive?igshid=OGQ5ZDc2ODk2ZA=="
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+    <footer class=" bg-cover  bg-light text-dark ">
+        <div class="py-12 ">
+            <div class="container bg-light">
+                <div class="row">
+
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Notre service
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html#send">Contactez-Nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html#send"><a href="Contact.html#send">Réservez
+                                        maintenant</a></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Shop
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="NosVhicules.html">Nos véhicules</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="">Nos lieux</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Galaxie Drive
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="./Apropos.html">A propos de nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Apropos.html">Notre carrière</a>
+                            </li>
+                            <li class="pt-3">
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Contact
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300 py-3" href="#!">+212 6 63 30 04 16</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="#!">Contact@galaxiedrive.com</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-12">
+            <div class="container bg-light">
+                <div class="row pt-5">
+                    <div class="col py-3">
+
+                        <!-- Copyright -->
+                        <p class="mb-3 mb-md-0 fs-xxs text-muted ">
+                            © 2024 All rights reserved. <span class="font-italic font-weight-bold">GALAXIE DRIVE</span>
+                        </p>
+
+                    </div>
+                    <div class="col-auto py-3">
+
+                        <!-- Payment methods -->
+                        <img class="footer-payment" src="assets/payments/payement11.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement2.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement3.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement4.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement5.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement6.PNG" alt="...">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // JavaScript function to change the large image
+        function changeImage(newSrc, id) {
+            var largeImage = document.getElementById('largeImage' + id);
+            largeImage.src = newSrc;
+        }
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Hide the spinner when the page is fully loaded
+            $('#spinner').hide();
+        });
+
+        function handleHover(element) {
+            element.classList.add('hovered');
+        }
+
+        function handleHoverEnd(element) {
+            element.classList.remove('hovered');
+        }
+
+         function flipCard(button) {
+  const card = button.closest('.card-index');
+  card.classList.toggle('flip');
+}
+    </script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-U1OMZmZqQhqLMpG8r+El98bL4C7pG1a1z6I1l6SILeEoNY5rG6Z1ZbDYzsy7kdW2"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

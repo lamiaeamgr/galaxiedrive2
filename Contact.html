@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxie Drive</title>
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <script src="./assets/css/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+    
+.text-gray-300{
+    font-size: 14px;
+}
+        #toggler {
+            margin-left: 300px;
+            margin-top: -50px;
+        }
+
+        #btnresv {
+            background: #1c53a3;
+            width: 200px;
+            height: 60px;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+
+        #btnform {
+            background: #1c53a3;
+            width: 200px;
+            height: 60px;
+            margin-bottom: 20px;
+            color: aliceblue;
+        }
+
+        @media (max-width: 767px) {
+            #reservey {
+                width: 60%;
+                height: 50%;
+                background: #1c53a3;
+                color: aliceblue;
+                margin: 10px;
+                font-size: small;
+            }
+
+            #bg-video {
+                height: 10px;
+                width: 50%;
+            }
+
+            #bg-video {
+                min-height: 50vh;
+                /* Adjust as needed for smaller screens */
+            }
+
+            .main-banner .caption {
+                width: 90%;
+            }
+
+            .main-banner .caption h6 {
+                font-size: 1em;
+            }
+
+            .main-banner .caption h3 {
+                font-size: 2em;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+
+
+
+            .col-6 {
+                text-align: center;
+            }
+
+            #h2 {
+                font-size: 25px;
+            }
+
+           
+
+            /* copyright */
+            #copyright {
+                text-align: center;
+            }
+            .footerh2 {
+                font-size: 25px;
+                padding: 5px;
+            }
+        };
+            
+        @media (max-width: 767px) {
+        #divNav {
+          display: block;
+        }
+      }
+  
+      #divNav {
+        display: block;
+      }
+  
+      @media (min-width: 768px) {
+        #divNav {
+          display: none;
+        }
+      }
+    </style>
+  
+  </head>
+  
+  <body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
+        <a class="navbar-brand col-auto" href="" style="font-size: 1.7em">
+          <!-- Logo -->
+          <img src="./assets/images/logo.png" alt="" class="px-2 w-50">
+          <!-- Logo -->
+        </a>
+        <button type="button" class="navbar-toggler mr-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Accueil</a>
+                <a href="NosVhicules.html" class="nav-item nav-link">Nos Véhicules</a>
+                <a href="Apropos.html" class="nav-item nav-link">A Propos</a>
+            </div>
+            <a href="Contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block active">Résérvation &nbsp;<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+      </nav>
+
+    <!-- section 1 start -->
+    <div class="main-banner" id="top" height="800px">
+        <video autoplay="" muted="" loop="" id="bg-video" height="800px">
+          <source src="assets/images/video.mp4" type="video/mp4">
+        </video>
+    
+        <div class="video-overlay header-text py-3 justify-content-center">
+          <div class="caption">
+            <h3> Find the best deal and take the road with <em>Galaxie Drive.</em></h3>
+            <div class="justify-content-around">
+              <a href="Contact.html#send" class="btn text-white p-3"
+                style="font-size: 1.2em; background: darkblue; width: fit-content; margin: 0; height: fit-content; ">Book
+                now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="divNav" style="height:10vh; width:100%; "></div>
+    
+        <!-- section 1 end -->
+    <div class="find-us my-5">
+        <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                    <center>
+                        <img src="assets/images/Owner.jpeg" class="img-fluid h-50 w-50" alt="">
+                    </center>
+                    <h5 class="text-center" style="margin-top: 15px;">Mr. Slimane</h5>
+                </div>
+                <div class="col-md-6">
+                    <div class="px-5 ">
+                        <h2 class="py-3">A Propos Du Fondateur De L'Agence </h2>
+                        <p cl>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester
+                            consectetur similiqu consectetur.<br><br>Lorem ipsum dolor sit amet, consectetur adipisic
+                            elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
+                        <div class="w-100" id="icons">
+                            <div class="row justify-content-center w-50 mt-4">
+                                <a class="btn-slide"
+                                    href="https://www.facebook.com/profile.php?id=61551219020904&mibextid=ZbWKwL"
+                                    style="text-decoration: none; color: #1c53a3"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-slide" href="https://wa.me/message/SBCAUWPBBWIBP1"
+                                    style="text-decoration: none; color: #1c53a3"><i class="fab fa-whatsapp"></i></a>
+                                <a class="btn-slide"
+                                    href="https://www.instagram.com/galaxiedrive?igshid=OGQ5ZDc2ODk2ZA=="
+                                    style="text-decoration: none; color: #1c53a3"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="send-message m-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading my-5">
+                        <h2 id="send">Envoyez Message Et Réservez Maintenant</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="contact-form">
+                        <form action="" id="myForm" onsubmit="sendEmail(); return false;">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <fieldset class="form-group">
+                                        <input name="fullname" type="text" class="form-control" id="fullname"
+                                            placeholder="Nom Complet" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <fieldset class="form-group">
+                                        <input name="email" type="text" class="form-control" id="email"
+                                            placeholder="E-Mail " required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <fieldset class="form-group">
+                                        <input name="tel" type="text" class="form-control" id="tel"
+                                            placeholder="Numero du téléphone " required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <fieldset class="form-group">
+                                        <input name="subject" type="text" class="form-control" id="subject"
+                                            placeholder="La voiture a réservé" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset class="form-group">
+                                        <textarea name="message" rows="6" class="form-control" id="message"
+                                            placeholder="Veuillez saisir votre Message" required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" class="btn button-all text-white" style="background-color: #1c53a3; height: fit-content; width: fit-content;">Envoyer un
+                                            message</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="conntainer-fluid bg-light py-3">
+        <center>
+            <div class="col-md-6 bg-white py-3 " style="border-radius: 15px; height: 150px;">
+                <h2 class="footerh2 mb-3">CONSULTEZ NOS RESEAUX SOCIAUX</h2>
+                <div class="row justify-content-around w-50 mt-2 p-0">
+                    <a class="btn-slide" href="https://www.facebook.com/profile.php?id=61551219020904&mibextid=ZbWKwL"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn-slide" href="https://wa.me/message/SBCAUWPBBWIBP1"
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn-slide" href="https://www.instagram.com/galaxiedrive?igshid=OGQ5ZDc2ODk2ZA=="
+                        style="text-decoration: none; color: #1c53a3"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </center>
+    </div>
+    <footer class=" bg-cover  bg-light text-dark ">
+        <div class="py-12 ">
+            <div class="container bg-light">
+                <div class="row">
+
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Notre service
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html#send">Contactez-Nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Contact.html#send">Réservez-maintenant</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class="m-4">
+                            Shop
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-7 mb-sm-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="NosVhicules.html">Nos véhicules</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="">Nos lieux</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Galaxie Drive
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="./Apropos.html">A propos de nous</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="Apropos.html">Notre carrière</a>
+                            </li>
+                            <li class="pt-3">
+                        </ul>
+
+                    </div>
+                    <div class="col-6 col-sm">
+
+                        <!-- Heading -->
+                        <h6 class=" m-4 ">
+                            Contact
+                        </h6>
+
+                        <!-- Links -->
+                        <ul class="list-unstyled mb-0 py-3">
+                            <li class="pt-3">
+                                <a class="text-gray-300 py-3" href="#!">+212 6 63 30 04 16</a>
+                            </li>
+                            <li class="pt-3">
+                                <a class="text-gray-300" href="#!">Contact@galaxiedrive.com</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pt-12">
+            <div class="container bg-light">
+                <div class="row pt-5">
+                    <div class="col py-3">
+
+                        <!-- Copyright -->
+                        <p class="mb-3 mb-md-0 fs-xxs text-muted " id="copyright">
+                            © 2024 All rights reserved. <span class="font-italic font-weight-bold">GALAXIE DRIVE</span>
+                        </p>
+
+                    </div>
+                    <div class="col-auto py-3">
+
+                        <!-- Payment methods -->
+                        <img class="footer-payment" src="assets/payments/payement11.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement2.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement3.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement4.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement5.PNG" alt="...">
+                        <img class="footer-payment" src="assets/payments/payement6.PNG" alt="...">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function sendEmail() {
+            (function () {
+                emailjs.init("f_2njriX5arIbBEih");
+            })();
+            var params = {
+                "fullname": document.getElementById("fullname").value,
+                "email": document.getElementById("email").value,
+                "tel": document.getElementById("tel").value,
+                "subject": document.getElementById("subject").value,
+                "message": document.getElementById("message").value,
+            };
+
+            var serviceID = "service_3gu7jpx";
+            var templateID = "template_ojzxxcs";
+            emailjs.send(serviceID, templateID, params)
+                .then(res => alert('E-mail Envoyé avec succès', params))
+                .catch();
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Hide the spinner when the page is fully loaded
+            $('#spinner').hide();
+        });
+    </script>
+    
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-U1OMZmZqQhqLMpG8r+El98bL4C7pG1a1z6I1l6SILeEoNY5rG6Z1ZbDYzsy7kdW2"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
